@@ -6,6 +6,5 @@
     "newtab": "index.html"
   },
   "content_scripts": [
-    {"js": ["dist/bundle.js"]}
   ]
 }
