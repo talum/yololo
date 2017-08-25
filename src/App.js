@@ -38,7 +38,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://commmits-by-logan.herokuapp.com/api/commit_messages').then((data) => {
+    axios.get('https://commits-by-logan.herokuapp.com/api/commit_messages', {}, {
+      withCredentials: true,
+      headers: {'Origin': 'yololo'}
+    }).then((data) => {
       const messages = data.data.data
       this.setState({
         messages: messages,

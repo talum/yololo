@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin:  0;
+  box-sizing: border-box;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+}
+
+.body {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+.flex__spacer {
+  width: 20%;
+}
+
+.heading  {
+ font-family: 'Roboto Condensed', sans-serif;
+ word-wrap: break-word;
+ overflow-wrap: break-word;
+ hyphens: auto;
+}
+
+.heading--level-1 {
+ font-weight: 900;
+ font-size:   64px;
+}
+
+.heading--level-2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #DFDCE3;
+}
+
+.heading--level-3 {
+  color: #DFDCE3;
+}
+
+.level {
+}
+
+.level__inner {
+  padding: 24px;
+}
+
+.level--padding-short {
+  padding: 24px 0;
+}
+
+.level--padding-tall {
+  padding: 64px 0;
+}
+
+.util--text-align-c {
+  text-align: center;
+}
+
+.hoverable {
+}
+
+.hoverable:hover {
+  color: #078893;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #DFDCE3;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+@media (max-width: 641px) {
+  .heading--level-1 {
+    font-size: 36px;
+  }
+  .heading--level-2, .heading--level-3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 401px) {
+  .heading--level-1 {
+    font-size: 24px;
+  }
+  .heading--level-2, .heading--level-3 {
+    font-size: 16px;
+  }
+}
