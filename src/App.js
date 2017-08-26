@@ -18,6 +18,24 @@ const colorSchemes = [
   },
   { backgroundColor: '#72B01D',
     headingColor: '#001D4A'
+  },
+  { backgroundColor: '#103900',
+    headingColor: '#0FFF95'
+  },
+  { backgroundColor: '#1D1E2C',
+    headingColor: '#DDBDD5'
+  },
+  { backgroundColor: '#59656F',
+    headingColor: '#F7EBEC'
+  },
+  { backgroundColor: '#292F36',
+    headingColor: '#FF6B6B'
+  },
+  { backgroundColor: '#373F51',
+    headingColor: '#DAA49A'
+  },
+  { backgroundColor: '#424242',
+    headingColor: '#FCFC62'
   }
 ]
 
@@ -38,10 +56,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://commits-by-logan.herokuapp.com/api/commit_messages', {}, {
-      withCredentials: true,
-      headers: {'Origin': 'yololo'}
-    }).then((data) => {
+    axios.get('https://commits-by-logan.herokuapp.com/api/commit_messages').then((data) => {
       const messages = data.data.data
       this.setState({
         messages: messages,
@@ -86,9 +101,9 @@ class App extends React.Component {
 
     return(
       <Main {...this.props} backgroundColor={backgroundColor}>
-        <div className='level level--padding-tall' onClick={this.changeIndex}>
+        <div className='level' onClick={this.changeIndex}>
           <div className='level__inner'>
-            <h2 className='heading heading--level-1 util--text-align-c hoverable' style={{color: headingColor}}>{ this.state.messages[this.state.currentMessageIndex].content }</h2>
+            <h2 className='heading heading--level-1 util--text-align-c' style={{color: headingColor}}>{ this.state.messages[this.state.currentMessageIndex].content }</h2>
           </div>
         </div>
       </Main>
@@ -100,19 +115,25 @@ class App extends React.Component {
 const Main = (props) => {
   return(
     <main className='body' role='main' style={{backgroundColor: props.backgroundColor}}>
-      <div className='level level--padding-short'>
-        <div className='level__inner'>
-          <h1 className='heading heading--level-2 util--text-align-c'>Commits by Logan</h1>
+      <div className='flex-container'>
+        <div className='flex__item'>
+          <div className='level level--padding-short'>
+            <div className='level__inner'>
+              <h1 className='heading heading--level-2 util--text-align-c'>Yololo</h1>
+            </div>
+          </div>
+        </div>
+        <div className='flex__item'>
+          {props.children}
+        </div>
+        <div className='flex__item'>
+          <div className='level'>
+            <div className='level__inner'>
+              <h3 className='heading heading--level-3 util--text-align-c'>Tap the text to get a new message</h3>
+            </div>
+          </div>
         </div>
       </div>
-      {props.children}
-    <div className='footer'>
-      <div className='level'>
-        <div className='level__inner'>
-          <h3 className='heading heading--level-3 util--text-align-c'>Press the spacebar or tap the text to get a new message</h3>
-        </div>
-      </div>
-    </div>
     </main>
   )
 }
